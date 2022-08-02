@@ -9,12 +9,15 @@ const ProductItem = (props) => {
   const { title, price, description, id } = props;
 
   const addToCartHandler = () => {
-    dispatch(cartActions.addItemToCart({
+    // and the send Http request
+    // fetch('firebase-url',{method: 'post',body:' JSON.stringify(newCart)'})
+    dispatch(
+      cartActions.addItemToCart({
         id,
         title,
         price,
-       
-    }));
+      })
+    );
   };
 
   return (
